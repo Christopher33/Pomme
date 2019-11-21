@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les pommes verte</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+
+{% if nav %}
+    <aside>
+        <div class="navBarre">
+            {% for tag in tag %}
+                <span>
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        </div>
+    </aside>
+{% endif %}
+
+<header>
+    <span class="titre">{{ title }}</span>
+</header>
+
+<section class="img_box">
+    <div class="taille">
+        <img class="img_pomme" src="../img/pomme_verte.png">
+    </div>
+</section>
+
+<article class="text_pomme">
+    <h2>L'histoire des pommes verte</h2>
+    <p class="text_lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos optio consectetur eligendi labore ab ratione cum
+        placeat neque laboriosam excepturi ipsa harum, animi, sit alias consequatur a. Quidem, blanditiis vero!Lorem Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.<br><br> Explicabo iste quasi minus fuga maiores tempore error, eius velit
+        consectetur reprehenderit, voluptatem illo ratione optio? Suscipit quibusdam officiis omnis quae numquam?Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. <br><br>Sapiente iusto corporis molestias beatae inventore modi accusamus. Voluptatum
+        rerum aspernatur atque fugit adipisci consequatur aut? Recusandae ex maiores repellat autem deserunt.</p>
+    <h3>{{ compt }}</h3>
+</article>
+
+
+    {% for article in articles %}
+        <article class="article_in">
+                <a href="{{ path('mySelf') }}"> {{ article.titre }} : </a>
+                <p>{{ article.contenu }}</p>
+        </article>
+    {% endfor %}
+
+</main>
+
+<footer>
+    <div class="in_footer">
+        <span>Mention légale des pommes</span>
+        <span>Contact entres pommés</span>
+        <span>Fait une compote</span>
+    </div>
+</footer>
+
+</body>
+</html>
